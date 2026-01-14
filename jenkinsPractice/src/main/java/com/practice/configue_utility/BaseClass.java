@@ -16,7 +16,7 @@ public class BaseClass {
 	 public static WebDriver sdriver;
 	 
 	 @Parameters("browser")
-	 @BeforeMethod
+	 @BeforeMethod(alwaysRun = true)
 	 public void configueBM(XmlTest test) {
 		 String browser= System.getProperty("browser", test.getParameter("browser"));
 		 if(browser.equals("safari")) {
@@ -34,7 +34,7 @@ public class BaseClass {
 		 sdriver=driver;
 	 }
 	 
-	 @AfterMethod
+	 @AfterMethod(alwaysRun = true)
 	 public void configueAM() {
 		 driver.quit();
 	 }
