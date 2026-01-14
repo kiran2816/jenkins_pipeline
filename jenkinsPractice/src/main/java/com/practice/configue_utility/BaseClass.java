@@ -7,18 +7,18 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
-import org.testng.xml.XmlTest;
+//import org.testng.annotations.Parameters;
+
 
 
 public class BaseClass {
 	 public WebDriver driver;
 	 public static WebDriver sdriver;
 	 
-	 @Parameters("browser")
+//	 @Parameters("browser")
 	 @BeforeMethod(alwaysRun = true)
-	 public void configueBM(XmlTest test) {
-		 String browser= System.getProperty("browser", test.getParameter("browser"));
+	 public void configueBM() {
+		 String browser= System.getProperty("browser");
 		 if(browser.equals("safari")) {
 			 driver= new SafariDriver();
 		 }
