@@ -22,7 +22,8 @@ public class ListImp implements ITestListener {
 
 	@Override
 	public void onStart(ITestContext context) {
-		String time = new Date().toString().replace(" ", "/").replace(":", "-");
+//		String time = new Date().toString().replace(" ", "/").replace(":", "-");
+		String time = String.valueOf(System.currentTimeMillis());
 		spark = new ExtentSparkReporter("./reports/myReport" + time + ".html");
 		spark.config().setTheme(Theme.DARK);
 		spark.config().setReportName("deepak");
